@@ -14,7 +14,7 @@ COPY *.csproj ./
 RUN dotnet restore
 COPY . ./
 COPY --from=frontend-build /src/frontend/dist ./wwwroot
-RUN dotnet publish ErpCosmetiqueApi.csproj -c Release -o /app/publish
+RUN dotnet publish ErpCosmetiqueApi.csproj -c Release -o /app/publish /p:SkipSpaBuild=true
 
 # Runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
