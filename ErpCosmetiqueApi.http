@@ -1,0 +1,40 @@
+@ErpCosmetiqueApi_HostAddress = http://localhost:5138
+
+### Tableau de bord
+GET {{ErpCosmetiqueApi_HostAddress}}/api/dashboard
+
+### Produits
+GET {{ErpCosmetiqueApi_HostAddress}}/api/products
+GET {{ErpCosmetiqueApi_HostAddress}}/api/products/low-stock
+
+### Vente au comptoir
+POST {{ErpCosmetiqueApi_HostAddress}}/api/sales
+Content-Type: application/json
+
+{
+  "customerId": 1,
+  "employeeId": 1,
+  "lines": [
+    { "productId": 1, "quantity": 2 }
+  ],
+  "discountAmount": 0,
+  "discountPercent": 0,
+  "paymentMode": 1
+}
+
+### Dépense caisse (repas, transport...)
+POST {{ErpCosmetiqueApi_HostAddress}}/api/expenses
+Content-Type: application/json
+
+{
+  "cashBoxId": 1,
+  "employeeId": 1,
+  "amount": 2500,
+  "motive": "Déjeuner équipe"
+}
+
+### Rapport journalier
+GET {{ErpCosmetiqueApi_HostAddress}}/api/reports/daily
+
+### Facture PDF
+GET {{ErpCosmetiqueApi_HostAddress}}/api/invoices/1/pdf

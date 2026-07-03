@@ -1,0 +1,26 @@
+# .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.pdb
+*.cache
+*.log
+*.vs/
+.vscode/
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Build output
+wwwroot/
+
+# Database
+*.db
+erp_cosmetique.db
+
+# OS files
+.DS_Store
+Thumbs.db
